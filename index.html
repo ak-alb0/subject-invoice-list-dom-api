@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Chango&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Kavivanar&family=League+Spartan:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Unbounded:wght@200..900&family=Young+Serif&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Invoice List</title>
+	</head>
+	<body>
+		<dialog id="invoice-modal" class="modal">
+			<form id="invoice-form" class="modal-form">
+				<h3 class="heading-m">New Invoice</h3>
+				<h5 class="heading-s purple-text">Bill To</h5>
+				<div class="dialog-form-inputs">
+					<label>
+						<span>Client's Name</span>
+						<input
+							class="input bold"
+							id="invoice-name"
+							name="name"
+							type="text"
+							placeholder="Alex Grim"
+							required
+						/>
+					</label>
+					<label>
+						<span>Client's Tag</span>
+						<input
+							class="input bold"
+							id="invoice-tag"
+							name="tag"
+							type="number"
+							placeholder="12052"
+							required
+						/>
+					</label>
+				</div>
+				<label>
+					<span>Price</span>
+					<input
+						class="input"
+						id="invoice-price"
+						name="price"
+						type="number"
+						placeholder="156.00"
+						required
+					/>
+				</label>
+				<div class="dialog-form-inputs">
+					<label>
+						<span>Progress Status</span>
+						<select class="input" id="invoice-status" name="status" required>
+							<option value="paid">Paid</option>
+							<option value="pending">Pending</option>
+							<option value="draft">Draft</option>
+						</select>
+					</label>
+					<label>
+						<span>Issue Date</span>
+						<input
+							class="input"
+							id="invoice-date"
+							name="date"
+							type="date"
+							required
+						/>
+					</label>
+				</div>
+				<div class="dialog-form-actions">
+					<button
+						id="cancel-invoice"
+						class="btn outlined grey-light grey-text bold"
+						type="button"
+						value="cancel"
+					>
+						<h5 class="heading-s">Discard</h5>
+					</button>
+					<button class="btn purple white-text bold" value="default">
+						<h5 class="heading-s">Save & Send</h5>
+					</button>
+				</div>
+			</form>
+		</dialog>
+		<header class="header-filters">
+			<div class="header-titles">
+				<h1 class="heading-l black-text">Invoices</h1>
+				<h5 class="heading-s">
+					There are <span id="invoices-count">7</span> total invoices
+				</h5>
+			</div>
+			<button id="new-invoice" class="btn purple">
+				<svg
+					class="circle white purple-text"
+					width="12"
+					height="12"
+					viewBox="0 0 11 11"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M6.31311 10.023V6.31317H10.0229V3.73284H6.31311V0.0230026H3.73278V3.73284H0.0229492V6.31317H3.73278V10.023H6.31311Z"
+						fill="currentColor"
+					/>
+				</svg>
+				<span class="heading-s white-text">New Invoice</span>
+			</button>
+		</header>
+		<main>
+			<div class="card">
+				<div class="card-tag">
+					<span>#</span>
+					<h5 class="heading-s black-text">RT3080</h5>
+				</div>
+				<span>Due 19 Aug 2021</span>
+				<span>Jensen Huong</span>
+				<h5 class="card-price heading-s black-text">
+					<span>£</span>
+					<span>1,800,90</span>
+				</h5>
+				<div class="card-status" style="--status-color: var(--green)">
+					<div class="card-status-circle"></div>
+					<h5 class="heading-s">Paid</h5>
+				</div>
+			</div>
+		</main>
+		<script src="app.js"></script>
+	</body>
+</html>
